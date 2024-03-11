@@ -10,8 +10,14 @@ import java.util.Scanner;
  */
 public class AnnosBisiestos {
     public static String evaluar(int anno){
-        // TODO: Coloca aquí el código del ejercicio 2: Años bisiestos
-        return "";
+        int abis = anno % 4;
+        if(abis == 0){
+            String respuesta = anno + " es bisiesto";
+            return respuesta;
+        }else{
+            String respuesta = anno + " no es bisiesto";
+            return respuesta;
+        }
     }
     
     public static void main(String[] args) {

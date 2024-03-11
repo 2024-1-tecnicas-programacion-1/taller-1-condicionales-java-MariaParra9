@@ -10,8 +10,25 @@ import java.util.Scanner;
  */
 public class Ordenamiento {
     public static String evaluar(int numero1, int numero2, int numero3, int numero4) {
-        // TODO: Coloca aquí el código del ejercicio 5: Ordenamiento
-        return "";
+        int[] numeros = {numero1, numero2, numero3, numero4};
+        
+        // Ordenar los números de menor a mayor
+        for (int i = 0; i < numeros.length - 1; i++) {
+            for (int j = 0; j < numeros.length - 1 - i; j++) {
+                if (numeros[j] > numeros[j + 1]) {
+                    // Intercambiar los números si están en el orden incorrecto
+                    int temp = numeros[j];
+                    numeros[j] = numeros[j + 1];
+                    numeros[j + 1] = temp;
+                }
+            }
+        }
+        
+        String respuesta = "Los números ordenados de menor a mayor son:";
+        for (int numero : numeros) {
+            System.out.println(numero);
+        }
+        return respuesta;
     }
     
     public static void main(String[] args) {

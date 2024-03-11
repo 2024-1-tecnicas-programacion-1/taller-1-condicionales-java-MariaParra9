@@ -3,6 +3,7 @@ package ejercicios;
 
 import static ejercicios.SetDeTenis.evaluar;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 /**
  *
@@ -11,6 +12,46 @@ import java.util.Scanner;
 public class Edad {
     public static String evaluar(int dia, int mes, int anno) {
         // TODO: Coloca aquí el código del ejercicio 6: Edad
+        LocalDate currentDate = LocalDate.now();
+        int dia_actual = currentDate.getDayOfMonth();
+        int mes_actual = currentDate.getMonthValue();
+        int anno_actual = currentDate.getYear();
+        int edad = anno_actual - anno;
+        
+        if (mes == mes_actual){
+            if(dia == dia_actual){
+                String respuesta = "Usted tiene "+ edad + " años";
+                return respuesta;
+            }else if (dia < dia_actual){
+                 String respuesta = "Usted acaba de cumplir "+ edad + " años";
+                 return respuesta;
+            }else if(dia > dia_actual){
+                String respuesta = "Usted acaba de cumplir "+ edad + " años";
+                return respuesta;
+            }
+        }else if(mes < mes_actual){
+            if(dia == dia_actual){
+                String respuesta = "Cumpliste "+ edad + " años";
+                return respuesta;
+            }else if (dia < dia_actual){
+                 String respuesta = "Cumpliste "+ edad + " años";
+                 return respuesta;
+            }else if(dia > dia_actual){
+                String respuesta = "Cumpliste "+ edad + " años";
+                return respuesta;
+            }
+        }else if(mes > mes_actual)
+            if(dia == dia_actual){
+                String respuesta = "Vas a cumplir "+ edad + " años";
+                return respuesta;
+            }else if (dia < dia_actual){
+                 String respuesta = "Vas a cumplir "+ edad + " años";
+                 return respuesta;
+            }else if(dia > dia_actual){
+                String respuesta = "Vas a cumplir "+ edad + " años";
+                return respuesta;
+            }
+        
         return "";
     }
     
